@@ -293,6 +293,9 @@ a {
   @media @tablet {
     font-size: 18px;
   }
+  @media @mobile {
+    padding: 0 10px;
+  }
 }
 
 .byline {
@@ -301,11 +304,9 @@ a {
   text-align: center;
   font-family: @body;
   z-index: 400;
-  @media screen and (max-width: 672px) {
-    color: black;
-  }
+  color: @dark-gray;
   @media @mobile {
-    font-size: 12px;
+    // font-size: 12px;
     padding-top: 10px;
   }
   &.lower {
@@ -367,7 +368,7 @@ a {
   font-size: 18px;
   font-family: @body;
   @media @mobile {
-    padding: 0 10px;
+    padding: 0;
   }
   &.intro {
     background: @back-gray;
@@ -702,6 +703,8 @@ footer {
 }
 .logo-link {
   margin-left: 10px;
+  margin-right: 0;
+  vertical-align: text-top;
   cursor: pointer;
   img {
     opacity: 1;
@@ -720,9 +723,7 @@ footer {
   display: inline-block;
   @media @mobile {
     display: inline-block;
-    // padding: 5px;
     font-size: 15px;
-    // padding-top: 5px;
     margin-right: 5px;
     &.subscribe {
       margin-right: 5px;
@@ -933,6 +934,9 @@ footer {
   .inset-map {
     width: 90%;
     margin: auto;
+    img {
+      width: 100%;
+    }
     @media @mobile {
       width: 80%;
     }
@@ -1224,7 +1228,7 @@ footer {
     padding: 10px 20px;
   }
   @media @mobile {
-    padding: 10px;
+    padding: 20px 0;
   }
   &.padded {
     padding-bottom: 40px;
@@ -1243,6 +1247,9 @@ footer {
 }
 .scroll-image {
   margin-top: 20px;
+  img {
+    width: 100%;
+  }
   svg {
     height: 1200px;
     @media @phone-horiz {

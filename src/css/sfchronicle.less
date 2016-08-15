@@ -83,7 +83,7 @@ hr{
   }
 }
 
-p {
+p, li {
   max-width: 730px;
   margin: auto;
   padding: 0 15px;
@@ -276,7 +276,7 @@ footer {
       max-width:800px;
     }
     @media @mobile {
-      font-size: 1.8em;
+      font-size: 1.7em;
     }
   }
 }
@@ -291,6 +291,10 @@ footer {
   &.embarcadero {
     // color: darken(@dark-gray,20%);
     background-color: rgba(0,0,0,0.2);
+  }
+  @media @mobile {
+    top: 0;
+    color: lighten(black, 20%);
   }
 }
 
