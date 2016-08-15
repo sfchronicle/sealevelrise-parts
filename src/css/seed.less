@@ -329,6 +329,7 @@ a {
     position: relative;
     top: 0;
     left: auto;
+    vertical-align: bottom;
   }
 
   @media screen and (max-width: 672px) {
@@ -343,9 +344,6 @@ a {
     }
     @media @mobile {
       font-size: 16px;
-    }
-    @media screen and (max-width: 672px) {
-      color: #41536a;
     }
     padding: 0 8px;
     color: white;
@@ -572,11 +570,8 @@ footer {
 .top-nav {
   margin: 20px auto;
   width: 100%;
-  // width: 75%;
-  // border: @light-gray 1px solid;
   padding-bottom: 10px;
   @media @mobile {
-    // width: 100%;
     margin: 10px auto;
   }
 }
@@ -585,71 +580,19 @@ footer {
   width: 100%;
 }
 
-.menu-navigation {
-  padding: 5px 0;
-  text-align: center;
-  margin: auto;
-  width: inherit;
-  height: 38px;
-  margin-top: 10px;
-  &.clicked {
-    display: none;
-  }
-  a {
-    color: @gray-blue;
-  }
-}
-
-.menu-links, .jump-links {
-  color: @light-gray;
-}
-
 .jump-navigation {
-  background: lighten(@light-gray,20%);
+  background: lighten(@light-gray,10%);
   border-bottom: 1px @light-gray solid;
-  // background: darken(@gray-blue, 25%);
-  // padding: 5px 0;
   text-align: center;
   margin: auto;
-  // max-width: 880px;
-  // max-width: 900px;
   width: inherit;
   height: 38px;
-  // margin-top: 10px;
   &.clicked {
     display: none;
   }
   @media @mobile {
     height: 33px;
-  }
-}
-
-.menu-links {
-  .link {
-    margin: 0 20px;
-    @media @mobile {
-      margin: 0 10px;
-    }
-  }
-
-  @media @mobile {
-    font-size: 14px;
-  }
-}
-.logo-link {
-  .link {
-    margin-left: 20px;
-    @media @mobile {
-      margin-left: 10px;
-    }
-  }
-}
-
-.menu-navigation {
-  width: 100%;
-  margin: 10px auto;
-  @media @mobile {
-    margin-top: 5px;
+    border-bottom: 0;
   }
 }
 
@@ -665,21 +608,20 @@ footer {
 }
 .jump-navigation {
   z-index: 1000;
-  // display: none;
-  // &.sticky {
-    display: inline;
-    // padding-top: 7px;
-  // }
+  display: inline;
   padding-left: 0;
   padding-right: 0;
+  @media @mobile {
+    padding: 0 5px;
+  }
 }
 
 .link {
   margin-right: 20px;
   vertical-align: top;
   cursor: pointer;
-  @media screen and (min-width: 481px) and (max-width: 672px) {
-    margin-right: 15px;
+  @media @mobile {
+    vertical-align: middle;
   }
   &.link-title {
     font-family: @banner;
@@ -687,7 +629,7 @@ footer {
       color: darken(@gray-blue,30%);
     }
     text-transform: uppercase;
-    @media screen and (max-width: 672px) {
+    @media @mobile {
       display: none;
     }
   }
@@ -705,6 +647,9 @@ footer {
   margin-left: 10px;
   margin-right: 0;
   vertical-align: text-top;
+  @media @mobile {
+    display: none;
+  }
   cursor: pointer;
   img {
     opacity: 1;
@@ -725,17 +670,20 @@ footer {
     display: inline-block;
     font-size: 15px;
     margin-right: 5px;
-    &.subscribe {
-      margin-right: 5px;
-    }
     &.social {
       padding-left: 3px;
       padding-right: 1px;
     }
   }
-  @media screen and (max-width: 374px) {
+  @media @mobile {
     font-size: 13px;
     margin: 2px;
+  }
+}
+
+.logo-link {
+  @media @mobile {
+    display: none;
   }
 }
 

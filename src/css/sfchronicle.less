@@ -338,6 +338,9 @@ footer {
   font-size: 18px;
   font-family: @body;
   cursor: pointer;
+  @media @mobile {
+    padding: 0;
+  }
 
   &.active {
     background: @active-link;
@@ -352,6 +355,9 @@ footer {
   &.social {
     float: right;
     margin: 0 6px;
+    @media @mobile {
+      margin: 4px;
+    }
     padding: 4px 2px;
     a {
       color: @gray-blue;
