@@ -283,21 +283,30 @@ footer {
 
 .over-img {
   position: absolute;
-  bottom: 100px;
   z-index: 2;
   color: white;
   left: 0;
   right: 0;
-  &.embarcadero {
+  bottom: 100px;
+  &.dim {
     background-color: rgba(0,0,0,0.2);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
   }
-  width: 80%;
-  margin: auto;
   @media @mobile {
     top: 0;
     color: lighten(black, 20%);
     width: 100%;
   }
+}
+
+.embarcadero-img {
+  bottom: 100px;
+  position: absolute;
+  left: 0;
+  right: 0;
 }
 
 .specialhead-top {
