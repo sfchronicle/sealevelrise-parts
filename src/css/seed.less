@@ -630,7 +630,7 @@ footer {
     }
     text-transform: uppercase;
     @media @mobile {
-      display: none;
+    //  display: none;
     }
   }
   &.social {
@@ -648,7 +648,7 @@ footer {
   margin-right: 0;
   vertical-align: text-top;
   @media @mobile {
-    display: none;
+  //  display: none;
   }
   cursor: pointer;
   img {
@@ -683,7 +683,7 @@ footer {
 
 .logo-link {
   @media @mobile {
-    display: none;
+  //  display: none;
   }
 }
 
@@ -697,10 +697,11 @@ footer {
   margin-top: 0px;
   text-align: left;
   @media @mobile {
-    top: unset;
-    bottom: 0;
-    font-size: 14px;
-    vertical-align: bottom;
+  //  top: unset;
+  //  bottom: 0;
+  //  font-size: 14px;
+  //  vertical-align: bottom;
+   display: block;
   }
 }
 
@@ -1481,10 +1482,16 @@ path.domain {
   margin: 0 auto;
   max-width: 750px;
   margin-bottom: 50px;
+  font-size: 18px;
+
+  @media @mobile {
+    width: 95%;
+    line-height: 1.2;
+  }
 }
 
 .aboutlanding {
-  padding: 0 0 20px 0;
+  padding: 0;
   p {
     max-width: 750px;
   }
@@ -1494,7 +1501,7 @@ path.domain {
   padding-top: 100px;
 
   @media @mobile {
-    padding-top: 20px;
+    padding-top: 50px;
   }
 }
 
@@ -1559,4 +1566,10 @@ path.domain {
 
 .embolden {
   font-family: AntennaRegular;
+}
+
+.hideme {
+  @media screen and (max-width: 974px) {
+    display: none;
+  }
 }
