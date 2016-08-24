@@ -20,7 +20,7 @@ module.exports = function(grunt) {
       "./src/js/therisk.js": "build/therisk_app.js",
       "./src/js/embarcadero.js": "build/embarcadero_app.js",
       "./src/js/resources.js": "build/resources_app.js",
-      "./src/js/tresasureisland.js": "build/treasureisland_app.js"
+      "./src/js/treasureisland.js": "build/treasureisland_app.js",
     };
 
     async.forEachOf(seeds, function(dest, src, c) {
