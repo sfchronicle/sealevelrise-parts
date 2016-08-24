@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+  <head>
+    <title><%= json.project.title %></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <%= t.include("partials/_head.html") %>
+    <%= t.include("partials/_analytics.html") %>
+  </head>
+  <script>  var HDN = HDN || {}  </script>
+
+  <body>
+
+    <div id="sticky-anchor"></div>
+
+    <%= t.include("partials/_nav.html") %>
+
+    <div class="title-container">
+      <div class="background-img treasureisland">
+          <div class="dim"></div>
+        <div class="over-img dim">
+        <div class="embarcadero-img">
+          <h1 class="title long">Part 3</h1>
+          <div class="deck">We might have a deck.</div>
+          <p class="author">By John King</a></p>
+          <p class="date">September 2016</p>
+        </div>
+        </div>
+      </div>
+    </div>
+    <p class="caption landing">This is a caption.<span class="byline"> Michael Macor, The Chronicle</span></p>
+
+
+    <div class="a-next"><a href="/" id="next" class="anchor"><div class="next">Read the rest of Rising Reality</div></a></div>
+
+    <%= t.include("partials/_footer.html") %>
+
+    <script>
+      // var mapData = <%= JSON.stringify(csv.map_data) %>;
+    </script>
+
+    <script src="../treasureisland_app.js" async></script>
+    <%= t.include("partials/_helloSFC.html") %>
+
+  </body>
+</html>
