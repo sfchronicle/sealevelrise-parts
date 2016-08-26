@@ -2,7 +2,7 @@
     position: absolute;
     top: 0; bottom: 0; left: 0;
     width: 85%;
-    min-width: 20px !important;
+    min-width: 5.5px !important;
     max-width: 100%;
     overflow: hidden;
     // resize: horizontal;
@@ -11,49 +11,43 @@
   }
 
   .first:before {
-    content: '' !important;
-    line-height: 20px;
-    text-align: center;
-    position: absolute;
-    right: 0;  
-    bottom: calc(50% - 5px);
-    width: 7px !important; 
-    height: 60px !important;
-    padding: 1px !important;
-    border-top-left-radius: 0px !important;
-    border-bottom-left-radius: 0px !important;
-    background: white !important;
-    // border: 1px
-    cursor: pointer;
-    -webkit-filter: '' !important;
-    filter: '' !important;
+    content: none !important;
   }
 
-  .first:after {
-    content: '' !important;
-    line-height: 20px;
-    text-align: center;
-    position: absolute;
-    right: 0; 
-    margin-right: -15px; 
-    bottom: calc(50% - 5px);
-    width: 10px !important; 
-    height: 60px !important;
-    padding: 1px !important;
-    border-top-left-radius: 0px !important;
-    border-bottom-left-radius: 0px !important;
-    background: white !important;
-    // border: 1px
-    cursor: pointer;
-    -webkit-filter: '' !important;
-    filter: '' !important;
-  }
+.slider {
+  width: 0;
+  max-width: 12px;
+  height: 15%;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
 
-  .divider-line {
-    width: 3px;
-    height: 100%;
-    background-color: white;
-    position: relative;
+.slider:before {
+    font-family: FontAwesome;
+    content: "\f0d9";
+    font-size: 35px;
+    text-shadow: 2px 2px 8px black;
+    position: absolute;
     top: 50%;
-    float: right;
-  }
+    right: 0;
+    margin-right: 20px;
+    color: white;
+}
+
+.slider:after {
+    font-family: FontAwesome;
+    content: "\f0da";
+    font-size: 35px;
+    text-shadow: -2px 2px 8px black;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-left: 20px;
+    color: white;
+}
