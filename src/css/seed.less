@@ -1582,3 +1582,61 @@ path.domain {
     display: none;
   }
 }
+
+// -----------------------------------------------------------------------------
+// PART 3 ----------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+
+.archive-fa {
+  font-size: 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: white;
+  background: rgba(0,0,0,0.5);
+  padding: 10px;
+}
+
+#expandable-photo {
+  cursor: pointer;
+  img {
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+  .float-img {
+    position: relative;
+    background: @dark-gray;
+    .caption {
+      background: white;
+    }
+  }
+}
+
+#expanded-photo {
+  z-index: 50;
+  display: none;
+  width: 80%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  overflow: scroll;
+  height: 500px;
+  &.expanded {
+    display: block;
+  }
+  .caption {
+    padding-top: 20px;
+    margin: 0;
+    background: white;
+  }
+}
+
+body {
+  &.expanded {
+    background: rgba(0,0,0,0.3);
+  }
+}
