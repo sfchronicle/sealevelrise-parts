@@ -1,15 +1,33 @@
 {
-  "title": "",
-  "description": "",
-  "author":"",
-  "hearst_category":"",
+  "title": "MAIN TITLE",
+  "description": "MAIN DESCRIPTION",
+  "twitter_text":"MAIN TWITTER TEXT",
+
+  "author":"Emma O'Neill, John King",
+  "category":"News",
   "date":"2016-09-22",
   "url": "http://projects.sfchronicle.com/2016/",
-  "slug": "SLUG-HERE-WITH-TRAILING-SLASH/",
-  "twitter_text":"",
+  "slug": "sea-level-rise/",
   "hashtag":"",
   "image": "assets/social.jpg",
-  "sheets": [],
-  "production": false,
-  "embedded": true
+  
+  "p1_title": "PART 1 TITLE",
+  "p1_description": "PART 1 DESCRIPTION",
+  "p1_twitter": "PART 1 TWITTER TEXT",
+  "p1_image": "assets/social.jpg",
+
+  "p2_title": "PART 2 TITLE",
+  "p2_description": "PART 2 DESCRIPTION",
+  "p2_twitter": "PART 2 TWITTER TEXT",
+  "p2_image": "assets/social.jpg",
+
+  "p3_title": "PART 3 TITLE",
+  "p3_description": "PART 3 DESCRIPTION",
+  "p3_twitter": "PART 3 TWITTER TEXT",
+  "p3_image": "assets/social.jpg",
+
+  "resources_title": "RESOURCES TITLE",
+  "resources_description": "RESOURCES DESCRIPTION",
+  "resources_twitter": "RESOURCES TWITTER TEXT",
+  "resources_image": "assets/social.jpg"
 }
