@@ -128,11 +128,11 @@
 
     <div id="archive-photo">
 
-      <div class="full-width-img" id="expanded-photo">
+<!--       <div class="full-width-img" id="expanded-photo">
         <i class="fa fa-times archive-fa" aria-hidden="true"></i>
         <img src="../assets/photos/treasureisland/TI-1939-story.jpg"></img>
       </div>
-
+ -->
       <div class="float-img-container" id="expandable-photo">
         <div class="float-img right">
           <i class="fa fa-arrows-alt archive-fa" aria-hidden="true"></i>
@@ -142,6 +142,20 @@
       </div>
 
     </div>
+
+    <div id="bigarchive">
+      <div style="width: 80%; margin: 100px auto; display: block">
+      <a href="javascript:void(0)" onclick="closeme()"><img src="../assets/photos/treasureisland/TI-1939-story.jpg"></img></a>
+      </div>
+    </div>
+
+    <script>
+    function closeme() {
+      event.preventDefault();
+      document.getElementById("bigarchive").style.display = "none";
+      document.body.style.overflow = "scroll";
+    }
+    </script>
 
     <div class="text">
       <p>The adaptation plan for Pier 70 also backs into higher ground, in this case the Dogpatch neighborhood. The plan is to regrade the 28-acre site, once part of a shipyard that employed as many as 18,000 people during World War II, so that it starts at the water and then angles up to building parcels located 66 inches above today’s average tide.</p>
