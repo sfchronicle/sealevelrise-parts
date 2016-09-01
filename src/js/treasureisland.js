@@ -27,17 +27,6 @@ thumbnailphoto.addEventListener("click",function() {
   document.body.style.overflow = "hidden";
 });
 
-archive.click(function() {
-  console.log('please work');
-})
-
-if (archive.style.display == "block") {
-  console.log('yes');
-  archive.click(function() {
-    archive.style.display = "none";
-  });
-}
-
 // populating map
 [0,1,2,3].forEach(function(d,idx){
   var mapID = document.getElementById("development"+d);
