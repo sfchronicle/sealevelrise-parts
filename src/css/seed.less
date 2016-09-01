@@ -1656,6 +1656,9 @@ body {
 .developments {
   font-family: @block-graphics;
   font-size: 14px;
+  @media @mobile {
+    font-size: 10px;
+  }
   .map-title {
     font-family: @med-graphics;
     font-size: 20px;
@@ -1673,29 +1676,27 @@ body {
   }
 }
 
-.treasureisland-map {
-  // margin-top: 20px;
+.flex-map {
+  .display-flex();
+  height: 1200px;
+  @media @tablet {
+    height: 600px;
+  }
+  width: 100%;
+  margin: 0 auto;
+}
+
+.treasureisland-map{
+  .flex(0,0,40%);
   img {
-    // width: 60%;
-    width: 500px;
+    max-width: 100%;
   }
-  svg {
-    height: 4000px;
-    @media @phone-horiz {
-      height: 1000px;
-    }
-    @media @mobile {
-      display: none;
-      height: 900px;
-      width: 100%;
-    }
-  }
-  float: left;
-  width: 60%;
-  text-align: center;
-  @media @mobile {
+}
+.development-wrapper {
+  margin: 0 auto;
+  .flex(0,0,55%);
+  img {
     width: 100%;
-    position: relative;
-    // position: fixed;
   }
+
 }
