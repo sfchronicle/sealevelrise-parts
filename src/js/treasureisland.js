@@ -9,15 +9,17 @@ var thumbnailphoto = document.querySelector('#expandable-photo');
 var bigphoto = document.querySelector('#expanded-photo');
 var bodyvar = document.querySelector('body');
 
-document.querySelector('#expandable-photo').addEventListener('click', function(){
-  console.log("clicked on expandable");
-  bigphoto.classList.add("expanded");
-  bodyvar.classList.add("expanded");
-});
-document.querySelector('#expanded-photo').addEventListener('click', function(){
-  bigphoto.classList.remove("expanded");
-  bodyvar.classList.remove("expanded");
-});
+if (screen.width > 320) {
+  document.querySelector('#expandable-photo').addEventListener('click', function(){
+    console.log("clicked on expandable");
+    bigphoto.classList.add("expanded");
+    bodyvar.classList.add("expanded");
+  });
+  document.querySelector('#expanded-photo').addEventListener('click', function(){
+    bigphoto.classList.remove("expanded");
+    bodyvar.classList.remove("expanded");
+  });
+}
 
 // populating map
 [0,1,2,3].forEach(function(d,idx){

@@ -1596,6 +1596,9 @@ path.domain {
   color: white;
   background: rgba(0,0,0,0.5);
   padding: 10px;
+  @media @mobile {
+    display: none !important;
+  }
 }
 
 #expandable-photo {
@@ -1604,10 +1607,18 @@ path.domain {
     &:hover {
       opacity: 0.7;
     }
+    @media @mobile {
+      &:hover {
+        opacity: 1;
+      }
+    }
   }
   .float-img {
     position: relative;
     background: @dark-gray;
+    @media @mobile {
+      background: white;
+    }
     .caption {
       background: white;
     }
