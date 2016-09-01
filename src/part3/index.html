@@ -84,13 +84,37 @@
 
     </div>
 
+    <div class="outer developments">
+
+      <div class="hed">Developments planned along the bay</div>
+      <div class="chatter">As development begins along areas facing serious sea level encroachment in the next years, careful plans account for how the developments will survive the increasing tides and threat of earthquakes.</div>
+
+      <div id="sticky-development-map-top"></div>
+      <div class="treasureisland-map">
+        <div class="ti-image" id="ti-image">
+          <img class="img" src="../assets/graphics/part3/waterfront2_bigtype_online.png">
+        </div>
+      </div>
+
+      <div class="development-info development0" id="development0"></div>
+      <div class="development-info development1" id="development1"></div>
+      <div class="development-info development2" id="development2"></div>
+      <div class="development-info development3" id="development3"></div>
+
+      <div class="interactive-credit">
+        <div class="entry">Emma O'Neill  &bull; <a href="mailto:eoneill@sfchronicle.com">eoneill@sfchronicle.com</a>   &bull; <a href = "https://twitter.com/emmaruthoneill" target="_blank">@emmaruthoneill</a></div>
+        <div class="entry">John Blanchard  &bull; <a href="mailto:jblanchard@sfchronicle.com">jblanchard@sfchronicle.com</a></div>
+      </div>
+
+    </div>
+
 
     <div class="a-next"><a href="/" id="next" class="anchor"><div class="next">Read the rest of Rising Reality</div></a></div>
 
     <%= t.include("partials/_footer.html") %>
 
     <script>
-      // var mapData = <%= JSON.stringify(csv.map_data) %>;
+      var mapData = <%= JSON.stringify(csv.development_data) %>;
     </script>
 
     <script src="../treasureisland_app.js" async></script>

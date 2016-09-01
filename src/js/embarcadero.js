@@ -3,6 +3,8 @@ var dot = require("./lib/dot");
 var $ = require("jquery");
 var d3 = require('d3');
 
+$("#part2_link").addClass("active");
+
 // templates for the two interactives
 var slideshow_template = dot.compile(require("../partials/_slideshow.html"));
 

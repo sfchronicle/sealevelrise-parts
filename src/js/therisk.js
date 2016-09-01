@@ -3,6 +3,17 @@ var dot = require("./lib/dot");
 var $ = require("jquery");
 var d3 = require('d3');
 
+$("#part1_link").addClass("active");
+//
+// $(".link").click(function() {
+//   console.log("you clicked");
+//   $(".link").each(function(d) {
+//     console.log(d);
+//     (this).removeClass("active");
+//   });
+//   console.log(this);
+//   $(this).addClass("active");
+// } );
 
 // $("my-video-duck").prop('muted', true); //mute
 // $("my-video-infobox").prop('muted', true); //mute
