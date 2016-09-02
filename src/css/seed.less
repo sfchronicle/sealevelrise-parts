@@ -1678,9 +1678,12 @@ body {
 
 .flex-map {
   .display-flex();
-  height: 1200px;
+  height: 1400px;
   @media @tablet {
     height: 600px;
+  }
+  @media @mobile {
+    display: none;
   }
   width: 100%;
   margin: 0 auto;
@@ -1698,5 +1701,22 @@ body {
   img {
     width: 100%;
   }
+}
 
+.mobile-development-container {
+  display: none;
+  @media @mobile {
+    position: relative;
+    display: block;
+    #mobile-development {
+      width: 80%;
+      margin: auto;
+    }
+    #scroll-right-dev, #scroll-left-dev {
+      background: white;
+    }
+    img {
+      width: 100%;
+    }
+  }
 }
