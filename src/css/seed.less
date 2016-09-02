@@ -220,6 +220,9 @@ a {
   padding-bottom: 10px;
   color: white;
   text-align: center;
+  @media @mobile {
+    font-size: 18px;
+  }
 }
 
 .next:hover {
@@ -645,6 +648,12 @@ footer {
   }
   &.social {
     float: right;
+  }
+  &:hover {
+    a {
+      font-weight: bolder;
+      color: darken(@gray-blue,20%);
+    }
   }
   &.active {
     a {
@@ -1533,6 +1542,10 @@ path.domain {
   background-position: center center;
   position: relative;
   display: block;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.95;
+  }
 }
 
 .overlay {
@@ -1659,8 +1672,11 @@ body {
 
 .developments {
   font-family: @block-graphics;
-  font-size: 14px;
-  @media @mobile {
+  font-size: 12px;
+  @media @tablet {
+    font-size: 12px;
+  }
+  @media @phone-horiz {
     font-size: 10px;
   }
   .map-title {
@@ -1682,9 +1698,15 @@ body {
 
 .flex-map {
   .display-flex();
-  height: 1400px;
+  height: 1340px;
+  @media @tablet-horiz {
+    height: 1350px;
+  }
   @media @tablet {
-    height: 600px;
+    height: 1150px;
+  }
+  @media @phone-horiz {
+    height: 950px;
   }
   @media @mobile {
     display: none;
@@ -1698,12 +1720,41 @@ body {
   img {
     max-width: 100%;
   }
+  // @media @tablet {
+  //   padding-top: 80px;
+  //   background: @light-blue;
+  // }
 }
 .development-wrapper {
   margin: 0 auto;
   .flex(0,0,55%);
+  @media @phone-horiz {
+    .flex(0,0,58%);
+    margin: 0 auto;
+  }
   img {
     width: 100%;
+    @media @tablet {
+      width: 60%;
+    }
+    @media @phone-horiz {
+      width: 50%;
+      float: right;
+      padding: 10px;
+    }
+  }
+}
+
+.developments {
+  @media @phone-horiz {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .interactive-credit {
+    margin-left: 0;
+    @media @mobile {
+      margin-left: 10px;
+    }
   }
 }
 
@@ -1712,14 +1763,23 @@ body {
   @media @mobile {
     position: relative;
     display: block;
+    background: @light-gray;
+    height: 600px;
     #mobile-development {
       width: 80%;
       margin: auto;
     }
     #scroll-right-dev, #scroll-left-dev {
-      background: white;
+      background: darken(@light-gray,5%);
+    }
+    #scroll-right-dev {
+      left: 92%;
+    }
+    #scroll-left-dev {
+      left:0%;
     }
     img {
+      margin-top: 20px;
       width: 100%;
     }
   }

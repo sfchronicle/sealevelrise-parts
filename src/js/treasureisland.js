@@ -36,22 +36,44 @@ thumbnailphoto.addEventListener("click",function() {
   results = [];
 });
 
-var mapHeight = $("#ti-image").height();
-$(".flex-map").css("height",mapHeight+40+"px")
-if (screen.width < 768){
-  var inc_list = [0,200,400,500];
-} else {
-  var inc_list = [0,250,450,650];
-}
-
 function fill_mobile_template(results,mobileID){
   var html = "<div class='map-image'><img class='img' src='"+results.img+"'></img></div><div class='map-title'>"+results.title+"</div><div class='map-hed'>What's there now: </div><div class='map-entry'>"+results.therenow+"</div><div class='map-hed'>What's planned: </div><div class='map-entry'>"+results.planned+"</div><div class='map-hed'>Protective measures: </div><div class='map-entry'>"+results.protective+"</div><div class='map-hed'>Timetable: </div><div class='map-entry'>"+results.timetable+"</div>";
   mobileID.innerHTML = html;
 }
 
+if (screen.width < 700) {
+  var mapHeight = 1200;
+  var offset = 120;
+} else if (screen.width < 800) {
+  var mapHeight = 1100;
+  var offset = 50;
+} else if (screen.width < 1100) {
+  var mapHeight = 1300;
+  var offset = 110;
+} else {
+  var mapHeight = 1400;
+  var offset = 150;
+}
+
+// if (screen.width < 768){
+//   var inc_list = [0,200,400,500];
+// } else {
+//   var inc_list = [0,250,450,650];
+// }
+
+// $(window).load(function(){
+//   var mapHeight = $("#tiimage").height();
+//   console.log("we are setting the interactive height to be:");
+//   console.log(mapHeight);
+//   $(".flex-map").css("height",mapHeight+40+"px")
+// });
+
 if (screen.width > 480) {
-  var mapHeight = $("#ti-image").height();
+
   var inc = mapHeight/5;
+  // var offset = 100;
+  var inc_list = [0, inc-offset, inc*2-offset, inc*3-offset];
+  console.log(inc_list);
   $(window).scroll(function(){
       var pos = $(this).scrollTop();
       var shoreline_pos = $('#sticky-development-map-top').offset().top-200;
@@ -68,11 +90,13 @@ if (screen.width > 480) {
         if (idx < 4 && idx >= 0) {
           var mapID = document.getElementById("development"+idx);
           mapID.classList.add("active");
-          var inc_new = Math.round(inc_list[idx]*mapHeight/1535);
+          var inc_new = inc_list[idx];
+          // var inc_new = Math.round(inc_list[idx]*mapHeight/1535);
           var top_padding = inc_new+"px";
           $("#development"+idx).css('padding-top',top_padding);
         } else {
-          var inc_new = Math.round(inc_list[3]*mapHeight/1535);
+          var inc_new = inc_list[3];
+          // var inc_new = Math.round(inc_list[3]*mapHeight/1535);
           var top_padding = inc_new+"px";
           $("#development3").css('padding-top',top_padding);
           document.getElementById('development3').classList.add("active");
