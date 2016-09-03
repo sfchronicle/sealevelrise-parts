@@ -642,8 +642,11 @@ footer {
       color: darken(@gray-blue,30%);
     }
     text-transform: uppercase;
-    @media @mobile {
-    //  display: none;
+    &:hover {
+      a {
+        font-weight: bolder;
+        color: darken(#152131,20%);
+      }
     }
   }
   &.social {
@@ -1698,12 +1701,12 @@ body {
 
 .flex-map {
   .display-flex();
-  height: 1340px;
+  height: 1300px;
   @media @tablet-horiz {
-    height: 1350px;
+    height: 1300px;
   }
   @media @tablet {
-    height: 1150px;
+    height: 1060px;
   }
   @media @phone-horiz {
     height: 950px;
@@ -1736,6 +1739,8 @@ body {
     width: 100%;
     @media @tablet {
       width: 60%;
+      float: right;
+      padding: 10px;
     }
     @media @phone-horiz {
       width: 50%;
@@ -1782,9 +1787,25 @@ body {
       margin-top: 20px;
       width: 100%;
     }
+    .inset-img {
+      width: 30%;
+      float: right;
+      padding: 10px;
+      padding-top: 0;
+    }
   }
 }
 
+.cranecove {
+  position: relative;
+  // opacity: 0.5;
+  .cranecove-overlay {
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
 
 // TEST
 

@@ -37,7 +37,7 @@ thumbnailphoto.addEventListener("click",function() {
 });
 
 function fill_mobile_template(results,mobileID){
-  var html = "<div class='map-image'><img class='img' src='"+results.img+"'></img></div><div class='map-title'>"+results.title+"</div><div class='map-hed'>What's there now: </div><div class='map-entry'>"+results.therenow+"</div><div class='map-hed'>What's planned: </div><div class='map-entry'>"+results.planned+"</div><div class='map-hed'>Protective measures: </div><div class='map-entry'>"+results.protective+"</div><div class='map-hed'>Timetable: </div><div class='map-entry'>"+results.timetable+"</div>";
+  var html = "<div class='map-image'><img class='img' src='"+results.img+"'></img></div><img class='inset-img' src='"+results.insetimg+"'></img><div class='map-title'>"+results.title+"</div><div class='map-hed'>What's there now: </div><div class='map-entry'>"+results.therenow+"</div><div class='map-hed'>What's planned: </div><div class='map-entry'>"+results.planned+"</div><div class='map-hed'>Protective measures: </div><div class='map-entry'>"+results.protective+"</div><div class='map-hed'>Timetable: </div><div class='map-entry'>"+results.timetable+"</div>";
   mobileID.innerHTML = html;
 }
 
