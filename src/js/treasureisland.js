@@ -186,3 +186,32 @@ if (screen.width > 480) {
   }
   window.__twitterIntentHandler = true;
 }());
+
+var overlay_images = ["cove_currentmean.png","cove_currentflood.png", "cove_2065mean.png","cove_2065flood.png","cove_2100mean.png","cove_2100flood.png"];
+
+var overlay = document.getElementById('cranecove-overlay');
+var elem = document.createElement("img");
+overlay.appendChild(elem);
+console.log("added the image");
+var i = 0;
+
+var loop = null;
+var tick = function() {
+  console.log("here we are ticking");
+  // bubblechart_slope(groups[i]);
+  // updateInfo(groups[i]);
+  overlay.src = "../assets/graphics/part3/cranecove/"+overlay_images[i];
+  console.log(overlay.src);
+  i = (i + 1) % overlay_images.length;
+  loop = setTimeout(tick, i == 0 ? 1700 : 1000);
+};
+
+tick();
+
+setTimeout( function(){
+    // Do something after 1 second
+    // $(".start").removeClass("selected");
+    // $(".pause").addClass("selected");
+    looping = false;
+    clearTimeout(loop);
+  }  , 60000 );
