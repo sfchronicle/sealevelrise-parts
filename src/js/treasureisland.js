@@ -236,6 +236,7 @@ $("#hightide").click(function(){
   clearTimeout(loop);
   looping = false;
   overlay_images = hightide_images;
+  i = 0;
   looping = true;
   $(".start").addClass("selected");
   $(".pause").removeClass("selected");
@@ -249,6 +250,7 @@ $("#flood").click(function(){
   clearTimeout(loop);
   looping = false;
   overlay_images = flood_images;
+  i = 0;
   looping = true;
   $(".start").addClass("selected");
   $(".pause").removeClass("selected");
