@@ -1824,3 +1824,72 @@ body {
     width: 100%;
   }
 }
+
+.controls {
+  text-align: center;
+  display: block;
+}
+.start, .pause {
+  border-radius: 7px;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  color: @dark-blue;
+  background: @light-gray;
+  padding: 5px 10px 4px 10px;
+
+  &:hover {
+    background: @dark-blue;
+    color: white;
+  }
+
+  &.selected {
+    color: @black;
+    cursor: default;
+    background: @dark-blue;
+  }
+}
+
+.button-container {
+  font-family: @block-graphics;
+  font-size: 16px;
+  margin: auto;
+  float:center;
+  text-align: center;
+  padding: 3px;
+  border-radius: 3px;
+  cursor: pointer;
+  opacity: 0.9;
+  .hightide, .flood {
+    display: inline-block;
+    width: 180px;
+    padding: 5px;
+    margin: 2px;
+    border-radius: 2px;
+    @media @mobile {
+      width: 80px;
+    }
+  }
+  .hightide {
+    border: @hightide 1px solid;
+    &.selected {
+      background: darken(@hightide,30%);
+      color: white;
+    }
+    &:hover {
+      background: darken(@hightide,30%);
+      color: white;
+    }
+  }
+  .flood {
+    border: @flood 1px solid;
+    &.selected {
+      background: darken(@flood,30%);
+      color: white;
+    }
+    &:hover {
+      background: darken(@flood,30%);
+      color: white;
+    }
+  }
+}

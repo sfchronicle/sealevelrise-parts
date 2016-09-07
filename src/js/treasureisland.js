@@ -187,31 +187,70 @@ if (screen.width > 480) {
   window.__twitterIntentHandler = true;
 }());
 
-var overlay_images = ["cove_currentmean.png","cove_currentflood.png", "cove_2065mean.png","cove_2065flood.png","cove_2100mean.png","cove_2100flood.png"];
+var hightide_images = ["cove_currentmean.png", "cove_2065mean.png","cove_2100mean.png"];
+var flood_images = ["cove_currentflood.png", "cove_2065flood.png","cove_2100flood.png"];
 
 var overlay = document.getElementById('cranecove-overlay');
 var elem = document.createElement("img");
 overlay.appendChild(elem);
-console.log("added the image");
 var i = 0;
+var looping = true;
+var overlay_images = hightide_images;
 
 var loop = null;
 var tick = function() {
-  console.log("here we are ticking");
-  // bubblechart_slope(groups[i]);
-  // updateInfo(groups[i]);
   overlay.src = "../assets/graphics/part3/cranecove/"+overlay_images[i];
-  console.log(overlay.src);
   i = (i + 1) % overlay_images.length;
   loop = setTimeout(tick, i == 0 ? 1700 : 1000);
 };
 
 tick();
 
+$(".start").click(function() {
+  if (looping) { return }
+  $(".start").addClass("selected");
+  $(".pause").removeClass("selected");
+  looping = true;
+  var i = 0;
+  tick();
+})
+
+$(".pause").click(function() {
+  if (!looping) { return }
+  $(".start").removeClass("selected");
+  $(".pause").addClass("selected");
+  looping = false;
+  clearTimeout(loop);
+})
+
 setTimeout( function(){
-    // Do something after 1 second
-    // $(".start").removeClass("selected");
-    // $(".pause").addClass("selected");
-    looping = false;
-    clearTimeout(loop);
-  }  , 60000 );
+  console.log("timed out");
+  looping = false;
+  clearTimeout(loop);
+}  , 60000 );
+
+$("#hightide").click(function(){
+  $("#hightide").addClass("selected");
+  $("#flood").removeClass("selected");
+  overlay_images = null;
+  clearTimeout(loop);
+  looping = false;
+  overlay_images = hightide_images;
+  looping = true;
+  $(".start").addClass("selected");
+  $(".pause").removeClass("selected");
+  tick();
+});
+
+$("#flood").click(function(){
+  $("#flood").addClass("selected");
+  $("#hightide").removeClass("selected");
+  overlay_images = null;
+  clearTimeout(loop);
+  looping = false;
+  overlay_images = flood_images;
+  looping = true;
+  $(".start").addClass("selected");
+  $(".pause").removeClass("selected");
+  tick();
+});
