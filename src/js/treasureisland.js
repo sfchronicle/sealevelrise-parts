@@ -1,6 +1,7 @@
 require("component-responsive-frame/child");
 require('image-slider');
 var $ = require("jquery");
+require('./lib/twitter');
 
 $("#part3_link").addClass("active");
 
@@ -143,50 +144,6 @@ if (screen.width > 480) {
   });
 }
 
-(function() {
-  if (window.__twitterIntentHandler) return;
-  var intentRegex = /twitter\.com\/intent\/(\w+)/,
-      windowOptions = 'scrollbars=yes,resizable=yes,toolbar=no,location=yes',
-      width = 550,
-      height = 420,
-      winHeight = screen.height,
-      winWidth = screen.width;
-
-  function handleIntent(e) {
-    e = e || window.event;
-    var target = e.target || e.srcElement,
-        m, left, top;
-
-    while (target && target.nodeName.toLowerCase() !== 'a') {
-      target = target.parentNode;
-    }
-
-    if (target && target.nodeName.toLowerCase() === 'a' && target.href) {
-      m = target.href.match(intentRegex);
-      if (m) {
-        left = Math.round((winWidth / 2) - (width / 2));
-        top = 0;
-
-        if (winHeight > height) {
-          top = Math.round((winHeight / 2) - (height / 2));
-        }
-
-        window.open(target.href, 'intent', windowOptions + ',width=' + width +
-                                           ',height=' + height + ',left=' + left + ',top=' + top);
-        e.returnValue = false;
-        e.preventDefault && e.preventDefault();
-      }
-    }
-  }
-
-  if (document.addEventListener) {
-    document.addEventListener('click', handleIntent, false);
-  } else if (document.attachEvent) {
-    document.attachEvent('onclick', handleIntent);
-  }
-  window.__twitterIntentHandler = true;
-}());
-
 var hightide_images = ["cove_currentmean.png", "cove_2065mean.png","cove_2100mean.png"];
 var flood_images = ["cove_currentflood.png", "cove_2065flood.png","cove_2100flood.png"];
 
@@ -255,4 +212,9 @@ $("#flood").click(function(){
   $(".start").addClass("selected");
   $(".pause").removeClass("selected");
   tick();
+});
+
+window.addEventListener('resize', function () {
+    "use strict";
+    window.location.reload();
 });
