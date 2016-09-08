@@ -67,8 +67,11 @@ if (screen.width < 700) {
   var offset = 150;
 }
 
-if (screen.width > 480) {
 
+                  
+
+
+if (screen.width > 480 || (Math.abs(window.orientation) === 90)) {
   var inc = mapHeight/5;
   var inc_list = [0, inc-offset, inc*2-offset, inc*3-offset];
   $(window).scroll(function(){

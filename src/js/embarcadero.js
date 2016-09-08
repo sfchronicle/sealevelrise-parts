@@ -32,7 +32,7 @@ if (screen.width > 900) {
   $("#Layer_1").css('margin-left',"25%");
 }
 
-if (screen.width > 480) {
+if (screen.width > 480 || (Math.abs(window.orientation) === 90)) {
   var mapHeight = $("#Layer_1").height()+40;
   // var mapHeight = 1200 + 40; //size of map + 40 pixels of padding
   var textHeight = 0;
