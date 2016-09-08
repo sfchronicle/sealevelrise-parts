@@ -257,7 +257,6 @@ go();
 // reload page if the reader re-orients their device ---------------------------
 // -----------------------------------------------------------------------------
 
-window.addEventListener('resize', function () {
-    "use strict";
-    window.location.reload();
-});
+window.addEventListener("orientationchange", function() {
+  window.location.reload();
+}, false);

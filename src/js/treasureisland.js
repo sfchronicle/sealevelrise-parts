@@ -230,16 +230,7 @@ $("#flood").click(function(){
 // -----------------------------------------------------------------------------
 // reload page if the reader re-orients their device ---------------------------
 // -----------------------------------------------------------------------------
-var orig_width = window.innerWidth;
-console.log("width is:");
-console.log(orig_width);
-window.addEventListener('resize', function () {
-    "use strict";
-    var new_width = window.innerWidth;
-    if (new_width != orig_width) {
-      console.log("the width has changed");
-      window.location.reload();
-    } else {
-      console.log("we are not reloading");
-    }
-});
+
+window.addEventListener("orientationchange", function() {
+  window.location.reload();
+}, false);
