@@ -86,27 +86,39 @@ if (screen.width > 480) {
   // var offset = 100;
   var inc_list = [0, inc-offset, inc*2-offset, inc*3-offset];
   // console.log(inc_list);
+  console.log("this is the top of the scrolling function");
   $(window).scroll(function(){
+      console.log("we are scrolling");
       var pos = $(this).scrollTop();
+      console.log("this is the scrolltop");
+      console.log(pos);
       var shoreline_pos = $('#sticky-development-map-top').offset().top-200;
+      console.log("this is the sticky div");
+      console.log(shoreline_pos);
       if(pos < shoreline_pos) {
+          console.log("should be showing the top div");
           document.getElementById('development0').classList.add("active");
       }
       if(pos > shoreline_pos) {
         [0,1,2,3].forEach(function(d,idx){
+          console.log("we are clearing the active classes");
           var mapID = document.getElementById("development"+d);
           mapID.classList.remove("active");
         });
         var idx = Math.round((pos-shoreline_pos)/inc);
+        console.log("here is our index");
+        console.log(idx);
 
         if (idx < 4 && idx >= 0) {
           var mapID = document.getElementById("development"+idx);
+          console.log("we are adding the active class to the correct development box");
           mapID.classList.add("active");
           var inc_new = inc_list[idx];
           // var inc_new = Math.round(inc_list[idx]*mapHeight/1535);
           var top_padding = inc_new+"px";
           $("#development"+idx).css('padding-top',top_padding);
         } else {
+          console.log("and here we are at the end");
           var inc_new = inc_list[3];
           // var inc_new = Math.round(inc_list[3]*mapHeight/1535);
           var top_padding = inc_new+"px";
