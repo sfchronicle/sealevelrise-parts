@@ -1695,7 +1695,13 @@ body {
   }
   #development0,#development1,#development2,#development3 {
     display: none;
+    // visibility: hidden;
+    // height: 0;
+    // opacity: 0;
+    // transition: opacity 0.5s linear;
     &.active {
+      // visibility: visible;
+      // opacity: 1;
       display: block;
     }
   }
