@@ -1612,7 +1612,7 @@ path.domain {
 .archive-fa {
   font-size: 40px;
   position: absolute;
-  top: 0;
+  top: 12px;
   left: 0;
   color: white;
   background: rgba(0,0,0,0.5);
@@ -1620,14 +1620,33 @@ path.domain {
   @media @mobile {
     display: none !important;
   }
+
+  &#large {
+    top: 0;
+  }
+}
+
+.float-img {
+  max-width: 350px;
+  position: relative;
+  // background: @dark-gray;
+  @media @mobile {
+    background: white;
+  }
+  .caption {
+    background: white;
+  }
 }
 
 #expandable-photo {
+  position: relative;
   cursor: pointer;
   @media @tablet {
     cursor: default;
   }
   img {
+    border-top: 2px solid black;
+    padding-top: 10px;
     &:hover {
       @media screen and (min-width: 769px) {
         opacity: 0.7;
@@ -1639,18 +1658,8 @@ path.domain {
       }
     }
   }
-  .float-img {
-    max-width: 350px;
-    position: relative;
-    // background: @dark-gray;
-    @media @mobile {
-      background: white;
-    }
-    .caption {
-      background: white;
-    }
-  }
 }
+
 
 #expanded-photo {
   z-index: 50;
@@ -1701,13 +1710,7 @@ body {
   }
   #development0,#development1,#development2,#development3 {
     display: none;
-    // visibility: hidden;
-    // height: 0;
-    // opacity: 0;
-    // transition: opacity 0.5s linear;
     &.active {
-      // visibility: visible;
-      // opacity: 1;
       display: block;
     }
   }
