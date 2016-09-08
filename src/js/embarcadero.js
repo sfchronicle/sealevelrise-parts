@@ -456,3 +456,12 @@ document.getElementById("scroll-left-gallery5").addEventListener("click", functi
     $("#scroll-left-gallery5").removeClass("first");
   };
 });
+
+// -----------------------------------------------------------------------------
+// reload page if the reader re-orients their device ---------------------------
+// -----------------------------------------------------------------------------
+
+window.addEventListener('resize', function () {
+    "use strict";
+    window.location.reload();
+});

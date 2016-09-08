@@ -5,10 +5,10 @@ require('./lib/twitter');
 
 $("#part3_link").addClass("active");
 
-// state propositions search bar
-var thumbnailphoto = document.querySelector('#expandable-photo');
-var bigphoto = document.querySelector('#expanded-photo');
-var bodyvar = document.querySelector('body');
+// // state propositions search bar
+// var thumbnailphoto = document.querySelector('#expandable-photo');
+// var bigphoto = document.querySelector('#expanded-photo');
+// var bodyvar = document.querySelector('body');
 
 // if (screen.width > 320) {
 //   document.querySelector('#expandable-photo').addEventListener('click', function(){
@@ -21,12 +21,21 @@ var bodyvar = document.querySelector('body');
 //   });
 // }
 
+// -----------------------------------------------------------------------------
+// expandable archival photo ---------------------------------------------------
+// -----------------------------------------------------------------------------
+
 var archive = document.getElementById("bigarchive");
+var thumbnailphoto = document.querySelector('#expandable-photo');
 
 thumbnailphoto.addEventListener("click",function() {
   archive.style.display = "block";
   document.body.style.overflow = "hidden";
 });
+
+// -----------------------------------------------------------------------------
+// interactive map showing developments ----------------------------------------
+// -----------------------------------------------------------------------------
 
 // populating map
 [0,1,2,3].forEach(function(d,idx){
@@ -74,7 +83,7 @@ if (screen.width > 480) {
   var inc = mapHeight/5;
   // var offset = 100;
   var inc_list = [0, inc-offset, inc*2-offset, inc*3-offset];
-  console.log(inc_list);
+  // console.log(inc_list);
   $(window).scroll(function(){
       var pos = $(this).scrollTop();
       var shoreline_pos = $('#sticky-development-map-top').offset().top-200;
@@ -143,6 +152,10 @@ if (screen.width > 480) {
     };
   });
 }
+
+// -----------------------------------------------------------------------------
+// crane cove flood animation --------------------------------------------------
+// -----------------------------------------------------------------------------
 
 var hightide_images = ["cove_currentmean.png", "cove_2065mean.png","cove_2100mean.png"];
 var flood_images = ["cove_currentflood.png", "cove_2065flood.png","cove_2100flood.png"];
@@ -213,6 +226,10 @@ $("#flood").click(function(){
   $(".pause").removeClass("selected");
   tick();
 });
+
+// -----------------------------------------------------------------------------
+// reload page if the reader re-orients their device ---------------------------
+// -----------------------------------------------------------------------------
 
 window.addEventListener('resize', function () {
     "use strict";

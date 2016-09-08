@@ -253,6 +253,10 @@ function go() {
 
 go();
 
+// -----------------------------------------------------------------------------
+// reload page if the reader re-orients their device ---------------------------
+// -----------------------------------------------------------------------------
+
 window.addEventListener('resize', function () {
     "use strict";
     window.location.reload();
