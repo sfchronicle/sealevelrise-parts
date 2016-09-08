@@ -775,7 +775,7 @@ footer {
   max-width: 900px;
   margin: 70px auto;
   @media @mobile {
-    margin: 50px auto;
+    margin: 30px auto;
   }
 }
 
@@ -1771,19 +1771,29 @@ body {
     position: relative;
     display: block;
     background: @light-gray;
-    height: 600px;
+    height: 550px;
     #mobile-development {
       width: 80%;
       margin: auto;
     }
     #scroll-right-dev, #scroll-left-dev {
-      background: darken(@light-gray,5%);
+      background: @light-gray;
+      text-shadow: -2px 2px 8px black;
+      color: white;
+      @media @mobile {
+        font-size: 35px;
+      }
     }
     #scroll-right-dev {
       left: 92%;
     }
     #scroll-left-dev {
       left:0%;
+    }
+    .map-image {
+      img {
+        min-height: 120px;
+      }
     }
     img {
       margin-top: 20px;
@@ -1869,7 +1879,8 @@ body {
     margin: 2px;
     border-radius: 2px;
     @media @mobile {
-      width: 80px;
+      width: 47%;
+      font-size: 13px;
     }
   }
   .hightide {
@@ -1899,4 +1910,15 @@ body {
 .cranecove {
   margin-bottom: 0;
   margin-top: 20px;
+}
+
+.outer {
+  .interactive-credit {
+    @media @mobile {
+      padding: 10px 0;
+    }
+  }
+  @media @mobile {
+    margin: 30px 0;
+  }
 }
