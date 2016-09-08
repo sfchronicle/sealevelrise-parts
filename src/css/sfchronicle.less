@@ -1017,6 +1017,8 @@ text {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  position: relative;
+  display: block;
 }
 
 .item{
@@ -1026,5 +1028,9 @@ text {
   text-align: center;
   font-size: 30px;
   color: white;
-  padding: 100px 10px;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
