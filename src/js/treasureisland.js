@@ -29,8 +29,10 @@ var archive = document.getElementById("bigarchive");
 var thumbnailphoto = document.querySelector('#expandable-photo');
 
 thumbnailphoto.addEventListener("click",function() {
-  archive.style.display = "block";
-  document.body.style.overflow = "hidden";
+  if (document.body.clientWidth > 768) {
+    archive.style.display = "block";
+    document.body.style.overflow = "hidden";
+  }
 });
 
 // -----------------------------------------------------------------------------

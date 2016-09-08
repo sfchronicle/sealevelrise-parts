@@ -1624,9 +1624,14 @@ path.domain {
 
 #expandable-photo {
   cursor: pointer;
+  @media @tablet {
+    cursor: default;
+  }
   img {
     &:hover {
-      opacity: 0.7;
+      @media screen and (min-width: 769px) {
+        opacity: 0.7;
+      }
     }
     @media @mobile {
       &:hover {
@@ -1659,6 +1664,7 @@ path.domain {
   cursor: pointer;
   // overflow: scroll;
   // height: 500px;
+
   &.expanded {
     display: block;
   }
@@ -1935,4 +1941,16 @@ body {
   @media @mobile {
     margin: 30px 0;
   }
+}
+
+.tablethide {
+  @media @tablet {
+    display: none !important;
+  }
+}
+
+.tabletshow {
+  @media screen and (min-width: 769px) {
+    display: none;
+  } 
 }
