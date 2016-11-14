@@ -53,6 +53,51 @@
       <p>That’s why the city has pursued the rebirth of these four large sites: Candlestick Point, Treasure Island, a 14-acre parking lot just south of AT&amp;T Park and a former steel works at Pier 70 below Potrero Hill. It’s also why developers have sought to build the projects, despite the costs of everything from environmental reviews to special elections.</p>
     </div>
 
+    <div class="interactive-wrapper">
+
+      <div class="map-interactive-mobile">
+        <div class="interactive-header mobile">
+          <div class="hed">Sea level rise around the bay</div>
+          <div class="chatter">Current scientific projections call for average high tides within San Francisco Bay to rise by as much as 66 inches between now and 2100. Whatever the exact level, the combination of rising seas and more extreme weather will pose threats around our shores in a variety of ways. Here are six – and the list doesn’t include such obvious targets as San Francisco and Oakland airports, both of which are built partly on landfill, and the low spots where bridges touch ground.</div>
+        </div>
+        <div class="divider map"></div>
+        <div class="mobile-container">
+          <div class="scroll-left first" id="scroll-left-lastmap"><i class="fa fa-angle-left" aria-hidden="true"></i></div>
+          <div class="scroll-right" id="scroll-right-lastmap"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+          <div class="mobile-template"></div>
+        </div>
+      </div>
+
+      <div class="interactive-header desktop">
+        <div class="hed">Sea level rise around the bay</div>
+        <div class="chatter">Current scientific projections call for average high tides within San Francisco Bay to rise by as much as 66 inches between now and 2100. Whatever the exact level, the combination of rising seas and more extreme weather will pose threats around our shores in a variety of ways. Here are six – and the list doesn’t include such obvious targets as San Francisco and Oakland airports, both of which are built partly on landfill, and the low spots where bridges touch ground.</div>
+      </div>
+      <div class="flex-container">
+        <div class="info">
+          <div class="info-text note">
+            <p>Select different map locations to see how sea level rise will impact different areas around the bay.
+            <p><i class="fa fa-plus-circle"></i> Click on any icon to begin.
+          </div>
+        </div>
+        <div class="image">
+          <img class="background" src="../assets/graphics/therisk/waterfront0529_bayarea_waterfront_GR.png" usemap="#imageMap">
+          <map name="imageMap">
+            <area class="map-group" shape="rect" coords="201,451,285,514" alt="eastpaloalto" title="eastpaloalto"/>
+            <area class="map-group" shape="rect" coords="155,261,221,332" alt="arrowhead" title="arrowhead"/>
+            <area class="map-group" shape="rect" coords="65,245,120,294" alt="missioncreek" title="missioncreek"/>
+            <area class="map-group" shape="rect" coords="7,169,71,222" alt="millvalley" title="millvalley"/>
+            <area class="map-group" shape="rect" coords="85,155,142,198" alt="wastetreatment" title="wastetreatment"/>
+            <area class="map-group" shape="rect" coords="3,7,177,95" alt="hwy37" title="hwy37"/>
+          </map>
+        </div>
+      </div>
+      <div class="interactive-credit">
+        <div class="entry">Emma O'Neill  &bull; <a href="mailto:eoneill@sfchronicle.com">eoneill@sfchronicle.com</a>   &bull; <a href = "https://twitter.com/emmaruthoneill" target="_blank">@emmaruthoneill</a></div>
+        <div class="entry">John Blanchard  &bull; <a href="mailto:jblanchard@sfchronicle.com">jblanchard@sfchronicle.com</a></div>
+      </div>
+
+    </div>
+
     <div class="inline-img">
       <%= t.include("partials/_introbox.html") %>
     </div>
@@ -80,7 +125,7 @@
     <%= t.include("partials/_footer.html") %>
 
     <script>
-      var mapData = <%= JSON.stringify(csv.development_data) %>;
+      var mapData = <%= JSON.stringify(csv.lastMap) %>;
     </script>
 
     <script src="../marshes_app.js" async></script>
