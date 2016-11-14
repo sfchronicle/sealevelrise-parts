@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+  <head>
+    <title><%= json.project.p4_title %></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <%= t.include("partials/_head-p4.html") %>
+    <%= t.include("partials/_analytics-p4.html") %>
+  </head>
+
+  <body>
+
+    <div id="sticky-anchor"></div>
+
+    <%= t.include("partials/_nav-p4.html") %>
+
+    <div class="title-container">
+      <div class="background-img treasureisland">
+          <div class="dim"></div>
+        <div class="over-img dim ti">
+        <div class="embarcadero-img">
+          <h1 class="title long">A grand response</h1>
+          <div class="deck">Bay Area’s answer to sea level rise must be targeted, ambitious and creative</div>
+          <p class="author">By John King</a></p>
+          <p class="date">November 2016</p>
+        </div>
+        </div>
+      </div>
+    </div>
+    <p class="caption landing">This is a caption. <span class="byline"> Michael Macor, The Chronicle</span></p>
+
+    <div class="text">
+      <p>The steep mesa of dirt that looms where Candlestick Park once stood exemplifies how concerns about climate change and sea level rise are beginning to reshape some of the most valuable land on San Francisco’s waterfront.</p>
+
+      <p>The mound of trucked-in soil is only the prelude to the construction of a shopping center and housing units where thousands of fans once cheered Willie Mays and Joe Montana. After the dirt is graded and compressed, the shops scheduled to open on the site in 2019 will be located as much as 10 feet above the former level of the entrance to the stadium used by the Giants and 49ers— a height intended as a safe perch above the rising sea for another century or more.</p>
+    </div>
+
+
+    <div class="float-img-container">
+      <div class="float-img left">
+        <img src="../assets/photos/treasureisland/02.jpg">
+        <div class="caption">The site preparation to build a shopping center and housing where Candlestick Park once stood includes raising the elevation of the site as much as 10 feet — part of the development strategy to prepare for long-term sea-level-rise projections. <span class="byline">Michael Macor, The Chronicle</span></div>
+      </div>
+    </div>
+
+    <div class="text">
+      <p>Candlestick Point’s new topography signals what’s in store on San Francisco’s promising but problematic new frontier: As many as 24,000 housing units and expansive parks could fill four huge tracts of land at various sites along the bay. But these shoreline projects come with serious environmental risk, considering the most recent government forecast says tides in the bay could rise as much as 66 inches by 2100.</p>
+
+      <p>That scenario causes some experts to warn against any new bayfront development projects at all. Yet there’s no denying that 21st century San Francisco has urgent needs, beginning with good housing at all price levels.</p>
+
+      <p>That’s why the city has pursued the rebirth of these four large sites: Candlestick Point, Treasure Island, a 14-acre parking lot just south of AT&amp;T Park and a former steel works at Pier 70 below Potrero Hill. It’s also why developers have sought to build the projects, despite the costs of everything from environmental reviews to special elections.</p>
+    </div>
+
+    <div class="inline-img">
+      <%= t.include("partials/_introbox.html") %>
+    </div>
+
+    <div id="bigarchive">
+      <div id="big2">
+
+        <a href="javascript:void(0)" onclick="closeme()">
+            <img style="position: relative;" src="../assets/photos/treasureisland/TI-1939-story-zoom.jpg">
+            <i id="large" class="fa fa-times fa-2x archive-fa" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+
+    <script>
+    function closeme() {
+      document.getElementById("bigarchive").style.display = "none";
+      document.body.style.overflow = "scroll";
+    }
+    </script>
+
+
+    <div class="a-next"><a href="<%= json.project.url + json.project.slug %>" id="next" class="anchor"><div class="next">Read the rest of Rising Reality</div></a></div>
+
+    <%= t.include("partials/_footer.html") %>
+
+    <script>
+      var mapData = <%= JSON.stringify(csv.development_data) %>;
+    </script>
+
+    <script src="../marshes_app.js" async></script>
+    <%= t.include("partials/_helloSFC.html") %>
+
+  </body>
+</html>
