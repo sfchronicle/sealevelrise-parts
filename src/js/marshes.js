@@ -64,3 +64,23 @@ qsa(".map-group").forEach(function(group) {
     e.target.parentElement.classList.add("selected");
   });
 });
+
+// -----------------------------------------------------------------------------
+// expandable archival photo ---------------------------------------------------
+// -----------------------------------------------------------------------------
+
+var sidebar = document.getElementById("sidebar");
+var sidebarlink = document.querySelector('#sidebar-link');
+
+sidebarlink.addEventListener("click",function() {
+  sidebar.style.display = "block";
+  document.body.style.overflow = "hidden";
+});
+
+// -----------------------------------------------------------------------------
+// reload page if the reader re-orients their device ---------------------------
+// -----------------------------------------------------------------------------
+
+window.addEventListener("orientationchange", function() {
+  window.location.reload();
+}, false);

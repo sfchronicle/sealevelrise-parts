@@ -94,6 +94,15 @@ a {
     img {
       width: 100%;
     }
+    &.sidebar {
+      .floating-img {
+        text-align: center;
+      }
+      max-width: 510px;
+      img {
+        max-width: 420px;
+      }
+    }
 
     &.vertical {
       max-width: 300px;
@@ -633,6 +642,9 @@ footer {
   vertical-align: top;
   cursor: pointer;
   font-family: @title;
+  @media @tablet-horiz {
+    margin-right: 10px;
+  }
   @media @mobile {
     vertical-align: middle;
   }
@@ -1626,6 +1638,20 @@ path.domain {
   }
 }
 
+.sidebar-fa {
+  font-size: 40px;
+  position: absolute;
+  top: 12px;
+  left: 0;
+  color: white;
+  background: rgba(0,0,0,0.5);
+  padding: 10px;
+
+  &#large {
+    top: 0;
+  }
+}
+
 .float-img {
   max-width: 350px;
   position: relative;
@@ -1635,6 +1661,38 @@ path.domain {
   }
   .caption {
     background: white;
+  }
+}
+
+#sidebar-link {
+  position: relative;
+  cursor: pointer;
+  border: 2px solid darken(@gray-blue,10%);
+  background-color: lighten(@gray-blue,30%);
+  .caption {
+    background-color: lighten(@gray-blue,30%);
+  }
+  padding: 10px;
+  font-family: @block-graphics;
+  font-size: 16px;
+  padding-top: 50px;
+  .bold {
+    font-family: @bold-graphics;
+  }
+  .sidebar-text {
+    padding-bottom: 10px;
+  }
+  .fa-arrows-alt {
+    font-size: 20px;
+    top: 0;
+  }
+  &:hover {
+    @media screen and (min-width: 769px) {
+      opacity: 0.7;
+    }
+  }
+  @media @tablet {
+    cursor: default;
   }
 }
 
@@ -1660,6 +1718,25 @@ path.domain {
   }
 }
 
+#sidebar {
+  z-index: 50;
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+
+  &.expanded {
+    display: block;
+  }
+  .caption {
+    padding-top: 20px;
+    margin: 0;
+    background: white;
+  }
+}
 
 #expanded-photo {
   z-index: 50;
@@ -1836,7 +1913,7 @@ body {
 
 // TEST
 
-#bigarchive {
+#bigarchive, #sidebar {
   display: none;
   position: fixed;
   overflow-y: scroll;
@@ -1852,12 +1929,76 @@ body {
   }
 }
 
+#sidebar-content {
+  max-width: 900px;
+  background-color: white;
+  .caption {
+    color: black;
+  }
+  .float-img-container {
+    .float-img {
+      @media @tablet-horiz {
+        max-width: 340px;
+      }
+      &.right {
+        margin: 1em 0.5em 0.5em 1.5em !important;
+        @media @tablet-horiz {
+          float: right !important;
+          padding: 40px;
+          margin: 0 !important;
+        }
+        @media @mobile {
+          width: 100%;
+          img {
+            max-width: 200px;
+            margin: auto;
+          }
+          clear: both;
+          padding: 20px 0;
+        }
+      }
+    }
+  }
+  .full-sidebar-text {
+    cursor: auto;
+    padding: 40px 20px;
+    @media @mobile {
+      padding: 10px;
+      padding-bottom: 30px;
+    }
+    font-family: @block-graphics;
+    color: black;
+    // padding-top: 60px;
+    font-size: 16px;
+    @media @tablet {
+      padding-top: 60px;
+    }
+    .bold {
+      font-family: @bold-graphics;
+    }
+  }
+  .fa-times {
+    font-size: 30px;
+  }
+}
+
 #big2 {
   max-width: 900px;
   width: 95%;
   margin: 8% auto 4% auto;
   display: block;
   position: relative;
+}
+
+#sidebar-content {
+  max-width: 900px;
+  width: 95%;
+  margin: 8% auto 4% auto;
+  display: block;
+  position: relative;
+  @media @mobile {
+    margin-top: 80px;
+  }
 }
 
 .controls {

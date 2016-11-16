@@ -33,19 +33,49 @@
 
     <div class="text">
       <p>The steep mesa of dirt that looms where Candlestick Park once stood exemplifies how concerns about climate change and sea level rise are beginning to reshape some of the most valuable land on San Francisco’s waterfront.</p>
-
-      <p>The mound of trucked-in soil is only the prelude to the construction of a shopping center and housing units where thousands of fans once cheered Willie Mays and Joe Montana. After the dirt is graded and compressed, the shops scheduled to open on the site in 2019 will be located as much as 10 feet above the former level of the entrance to the stadium used by the Giants and 49ers— a height intended as a safe perch above the rising sea for another century or more.</p>
     </div>
 
-
     <div class="float-img-container">
-      <div class="float-img left">
-        <img src="../assets/photos/treasureisland/02.jpg">
-        <div class="caption">The site preparation to build a shopping center and housing where Candlestick Park once stood includes raising the elevation of the site as much as 10 feet — part of the development strategy to prepare for long-term sea-level-rise projections. <span class="byline">Michael Macor, The Chronicle</span></div>
+      <div class="float-img right sidebar">
+
+        <div id="sidebar-link">
+          <i class="fa fa-arrows-alt sidebar-fa" aria-hidden="true"></i>
+          <div class="sidebar-text"><span class="bold">Here’s a seemingly simple question:</span> If the Bay Area is worried about sea level rise, why not limit the amount of water coming into San Francisco Bay through the Golden Gate?</div>
+          <div class="floating-img">
+            <img src="../assets/photos/marshes/risingbay1120_dam.jpg"></img>
+          </div>
+          <div class="caption">A 1949 Chronicle diagram of the Reber plan, complete with room for an eight-lane roadway between Oakland and San Francisco. Not only that, the paper wrote, turning the far ends of the bay into freshwater lakes “would make warm days cooler and cool days warmer.” Said the creator, John Reber, “I’d even change the climate. This is some project.” <span class="byline"> The Chronicle</span></div>
+        </div>
       </div>
     </div>
 
+    <div id="sidebar">
+      <div id="sidebar-content">
+        <a href="javascript:void(0)" onclick="closeme()">
+          <div class="float-img-container sidebar-img">
+            <div class="float-img right">
+                <img src="../assets/photos/marshes/risingbay1120_dam.jpg"></img>
+                <div class="caption">A 1949 Chronicle diagram of the Reber plan, complete with room for an eight-lane roadway between Oakland and San Francisco. Not only that, the paper wrote, turning the far ends of the bay into freshwater lakes “would make warm days cooler and cool days warmer.” Said the creator, John Reber, “I’d even change the climate. This is some project.” <span class="byline"> The Chronicle</span></div>
+            </div>
+          </div>
+          <i id="large" class="fa fa-times fa-2x sidebar-fa" aria-hidden="true"></i></a>
+          <div class="full-sidebar-text">
+            <%= t.include("partials/_sidebar_content.html") %>
+          </div>
+      </div>
+    </div>
+
+    <script>
+    function closeme() {
+      document.getElementById("sidebar").style.display = "none";
+      document.body.style.overflow = "scroll";
+    }
+    </script>
+
     <div class="text">
+
+      <p>The mound of trucked-in soil is only the prelude to the construction of a shopping center and housing units where thousands of fans once cheered Willie Mays and Joe Montana. After the dirt is graded and compressed, the shops scheduled to open on the site in 2019 will be located as much as 10 feet above the former level of the entrance to the stadium used by the Giants and 49ers— a height intended as a safe perch above the rising sea for another century or more.</p>
+
       <p>Candlestick Point’s new topography signals what’s in store on San Francisco’s promising but problematic new frontier: As many as 24,000 housing units and expansive parks could fill four huge tracts of land at various sites along the bay. But these shoreline projects come with serious environmental risk, considering the most recent government forecast says tides in the bay could rise as much as 66 inches by 2100.</p>
 
       <p>That scenario causes some experts to warn against any new bayfront development projects at all. Yet there’s no denying that 21st century San Francisco has urgent needs, beginning with good housing at all price levels.</p>
@@ -98,26 +128,14 @@
 
     </div>
 
+    <div class="inset-splash">
+        <div class='embed-container'><iframe src='https://player.vimeo.com/video/186459591' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+        <span class="byline">Erin Brethauer, The Chronicle</span>
+    </div>
+
     <div class="inline-img">
       <%= t.include("partials/_introbox.html") %>
     </div>
-
-    <div id="bigarchive">
-      <div id="big2">
-
-        <a href="javascript:void(0)" onclick="closeme()">
-            <img style="position: relative;" src="../assets/photos/treasureisland/TI-1939-story-zoom.jpg">
-            <i id="large" class="fa fa-times fa-2x archive-fa" aria-hidden="true"></i>
-        </a>
-      </div>
-    </div>
-
-    <script>
-    function closeme() {
-      document.getElementById("bigarchive").style.display = "none";
-      document.body.style.overflow = "scroll";
-    }
-    </script>
 
 
     <div class="a-next"><a href="<%= json.project.url + json.project.slug %>" id="next" class="anchor"><div class="next">Read the rest of Rising Reality</div></a></div>
