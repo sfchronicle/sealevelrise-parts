@@ -1,6 +1,7 @@
 var dot = require("./lib/dot");
 var $ = require("jquery");
 require('./lib/twitter');
+require('image-slider');
 
 $("#part4_link").addClass("active");
 
