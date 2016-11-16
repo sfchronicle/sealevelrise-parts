@@ -15,8 +15,8 @@ for (var i = 0, len = mapData.length; i < len; i++) {
 }
 
 // templates for the two interactives
-var template = dot.compile(require("../partials/_info.html"));
-var mobile_template = dot.compile(require("../partials/_mobile_info.html"));
+var template = dot.compile(require("../partials/_lastmap_info.html"));
+var mobile_template = dot.compile(require("../partials/_lastmap_mobile.html"));
 
 // initialize map interactive on mobile
 var index = 0;
@@ -27,7 +27,7 @@ document.getElementById("scroll-right-lastmap").addEventListener("click", functi
   index = index+1;
   console.log(lookup_mobile[index]);
   document.querySelector(".mobile-template").innerHTML = mobile_template(lookup_mobile[index]);
-  if (index == 5) {
+  if (index == 3) {
     $("#scroll-right-lastmap").addClass("last");
   } else {
     $("#scroll-right-lastmap").removeClass("last");
@@ -48,7 +48,7 @@ document.getElementById("scroll-left-lastmap").addEventListener("click", functio
   } else {
     $("#scroll-left-lastmap").removeClass("first");
   };
-  if (index == 5) {
+  if (index == 3) {
     $("#scroll-right-lastmap").addClass("last");
   } else {
     $("#scroll-right-lastmap").removeClass("last");
@@ -57,7 +57,7 @@ document.getElementById("scroll-left-lastmap").addEventListener("click", functio
 
 // clicking for desktop map interactive
 var qsa = s => Array.prototype.slice.call(document.querySelectorAll(s));
-qsa(".map-group").forEach(function(group) {
+qsa(".last-map-group").forEach(function(group) {
   group.addEventListener("click", function(e) {
     document.querySelector(".note").innerHTML = template(lookup[this.title]);
     if (document.querySelector(".selected")) document.querySelector(".selected").classList.remove("selected");
@@ -75,6 +75,11 @@ var sidebarlink = document.querySelector('#sidebar-link');
 sidebarlink.addEventListener("click",function() {
   sidebar.style.display = "block";
   document.body.style.overflow = "hidden";
+});
+
+sidebar.addEventListener("click",function() {
+  document.getElementById("sidebar").style.display = "none";
+  document.body.style.overflow = "scroll";
 });
 
 // -----------------------------------------------------------------------------

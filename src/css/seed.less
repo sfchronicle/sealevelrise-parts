@@ -1672,15 +1672,17 @@ path.domain {
   .caption {
     background-color: lighten(@gray-blue,30%);
   }
-  padding: 10px;
   font-family: @block-graphics;
   font-size: 16px;
-  padding-top: 50px;
+  // padding-top: 50px;
   .bold {
     font-family: @bold-graphics;
   }
   .sidebar-text {
-    padding-bottom: 10px;
+    padding: 10px 10px 15px 60px;
+  }
+  .caption {
+    padding: 0 10px 10px 10px;
   }
   .fa-arrows-alt {
     font-size: 20px;
@@ -1945,6 +1947,7 @@ body {
         @media @tablet-horiz {
           float: right !important;
           padding: 40px;
+          padding-right: 0;
           margin: 0 !important;
         }
         @media @mobile {
@@ -1962,6 +1965,9 @@ body {
   .full-sidebar-text {
     cursor: auto;
     padding: 40px 20px;
+    p {
+      max-width: 800px;
+    }
     @media @mobile {
       padding: 10px;
       padding-bottom: 30px;
@@ -1975,6 +1981,12 @@ body {
     }
     .bold {
       font-family: @bold-graphics;
+      font-size: 18px;
+    }
+    .italic {
+      font-family: @med-graphics;
+      font-style: italic;
+      font-size: 14px;
     }
   }
   .fa-times {
