@@ -5,6 +5,9 @@ require('image-slider');
 
 $("#part4_link").addClass("active");
 
+// templates for the two interactives
+var slideshow_template = dot.compile(require("../partials/_slideshow.html"));
+
 // setting up look up tables for mobile and desktop for clickable map
 var lookup = {};
 for (var i = 0, len = mapData.length; i < len; i++) {
@@ -57,6 +60,7 @@ document.getElementById("scroll-left-lastmap").addEventListener("click", functio
 });
 
 // clicking for desktop map interactive
+document.querySelector(".note").innerHTML = template(lookup["sonoma"]);
 var qsa = s => Array.prototype.slice.call(document.querySelectorAll(s));
 qsa(".last-map-group").forEach(function(group) {
   group.addEventListener("click", function(e) {
@@ -82,6 +86,72 @@ sidebar.addEventListener("click",function() {
   document.getElementById("sidebar").style.display = "none";
   document.body.style.overflow = "scroll";
 });
+
+// -----------------------------------------------------------------------------
+// photo gallery 6 ---------------------------
+// -----------------------------------------------------------------------------
+
+// initialize photo gallery #6
+var photo1 = {
+  url: "http://ww2.hdnux.com/photos/54/11/64/11813277/3/2000x1000.jpg",
+  caption: "This is a caption. ",
+  credit: "Michael Macor"
+};
+var photo2 = {
+  url: "http://ww2.hdnux.com/photos/54/11/64/11813276/3/2000x1000.jpg",
+  caption: "This is a caption. ",
+  credit: "Michael Macor"
+};
+var photo3 = {
+  url: "http://ww2.hdnux.com/photos/54/11/64/11813273/3/2000x1000.jpg",
+  caption: "This is a caption. ",
+  credit: "Michael Macor"
+};
+var photo4 = {
+  url: "http://ww2.hdnux.com/photos/54/11/64/11813274/3/2000x1000.jpg",
+  caption: "This is a caption. ",
+  credit: "Michael Macor"
+};
+document.querySelector("#photo_g60").innerHTML = slideshow_template(photo1);
+document.querySelector("#photo_g61").innerHTML = slideshow_template(photo2);
+document.querySelector("#photo_g62").innerHTML = slideshow_template(photo3);
+document.querySelector("#photo_g63").innerHTML = slideshow_template(photo4);
+
+
+// photo gallery #4
+var gallery6_idx = 0;
+// set up clicking to update map interactive on mobile
+document.getElementById("scroll-right-gallery6").addEventListener("click", function() {
+  gallery6_idx = gallery6_idx+1;
+  $(".photo_g6").removeClass("active");
+  $("#photo_g6"+gallery6_idx).addClass("active");
+  if (gallery6_idx == 3) {
+    $("#scroll-right-gallery6").addClass("last");
+  } else {
+    $("#scroll-right-gallery6").removeClass("last");
+  };
+  if (gallery6_idx == 0) {
+    $("#scroll-left-gallery6").addClass("first");
+  } else {
+    $("#scroll-left-gallery6").removeClass("first");
+  };
+});
+document.getElementById("scroll-left-gallery6").addEventListener("click", function() {
+  gallery6_idx = gallery6_idx-1;
+  $(".photo_g6").removeClass("active");
+  $("#photo_g6"+gallery6_idx).addClass("active");
+  if (gallery6_idx == 3) {
+    $("#scroll-right-gallery6").addClass("last");
+  } else {
+    $("#scroll-right-gallery6").removeClass("last");
+  };
+  if (gallery6_idx == 0) {
+    $("#scroll-left-gallery6").addClass("first");
+  } else {
+    $("#scroll-left-gallery6").removeClass("first");
+  };
+});
+
 
 // -----------------------------------------------------------------------------
 // reload page if the reader re-orients their device ---------------------------

@@ -317,6 +317,9 @@ footer {
   width: 80%;
   margin: 0 auto;
   color: white;
+  &.shorelines {
+    background-color: rgba(0,0,0,0.5);
+  }
 }
 
 .specialhead-top {
@@ -495,7 +498,7 @@ header {
     position: relative;
     display: block;
     z-index: 1;
-      &.therisk {
+  &.therisk {
     background-image: url("./assets/photos/therisk/waterfrontmainxxxx.jpg");
   }
   &.embarcadero {
@@ -510,8 +513,20 @@ header {
     @media @mobile {
       background-position: -500px !important;
     }
-    // height: 700px;
   }
+  &.shorelines {
+    background-image: url("http://ww2.hdnux.com/photos/54/11/64/11813242/3/2000x1000.jpg");
+    @media @tablet-horiz {
+      background-position: -110px !important;
+    }
+    @media @tablet {
+      background-position: -400px !important;
+    }
+    @media @mobile {
+      background-position: -420px !important;
+    }
+  }
+    // height: 700px;
 
   .resources {
     background: #6C85A5;
