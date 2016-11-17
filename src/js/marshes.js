@@ -29,7 +29,6 @@ document.querySelector(".mobile-template").innerHTML = mobile_template(lookup_mo
 // set up clicking to update map interactive on mobile
 document.getElementById("scroll-right-lastmap").addEventListener("click", function() {
   index = index+1;
-  console.log(lookup_mobile[index]);
   document.querySelector(".mobile-template").innerHTML = mobile_template(lookup_mobile[index]);
   if (index == 3) {
     $("#scroll-right-lastmap").addClass("last");
@@ -60,7 +59,7 @@ document.getElementById("scroll-left-lastmap").addEventListener("click", functio
 });
 
 // clicking for desktop map interactive
-document.querySelector(".note").innerHTML = template(lookup["sonoma"]);
+document.querySelector(".note").innerHTML = template(lookup["ravenswood"]);
 var qsa = s => Array.prototype.slice.call(document.querySelectorAll(s));
 qsa(".last-map-group").forEach(function(group) {
   group.addEventListener("click", function(e) {
@@ -93,22 +92,27 @@ sidebar.addEventListener("click",function() {
 
 // initialize photo gallery #6
 var photo1 = {
-  url: "http://ww2.hdnux.com/photos/54/11/64/11813277/3/2000x1000.jpg",
-  caption: "This is a caption. ",
-  credit: "Michael Macor"
-};
-var photo2 = {
   url: "http://ww2.hdnux.com/photos/54/11/64/11813276/3/2000x1000.jpg",
   caption: "This is a caption. ",
   credit: "Michael Macor"
 };
-var photo3 = {
+var photo2 = {
   url: "http://ww2.hdnux.com/photos/54/11/64/11813273/3/2000x1000.jpg",
   caption: "This is a caption. ",
   credit: "Michael Macor"
 };
-var photo4 = {
+var photo3 = {
   url: "http://ww2.hdnux.com/photos/54/11/64/11813274/3/2000x1000.jpg",
+  caption: "This is a caption. ",
+  credit: "Michael Macor"
+};
+var photo4 = {
+  url: "http://ww2.hdnux.com/photos/54/11/64/11813277/3/2000x1000.jpg",
+  caption: "This is a caption. ",
+  credit: "Michael Macor"
+};
+var photo5 = {
+  url: "http://ww2.hdnux.com/photos/54/11/64/11813236/3/2000x1000.jpg",
   caption: "This is a caption. ",
   credit: "Michael Macor"
 };
@@ -116,7 +120,7 @@ document.querySelector("#photo_g60").innerHTML = slideshow_template(photo1);
 document.querySelector("#photo_g61").innerHTML = slideshow_template(photo2);
 document.querySelector("#photo_g62").innerHTML = slideshow_template(photo3);
 document.querySelector("#photo_g63").innerHTML = slideshow_template(photo4);
-
+document.querySelector("#photo_g64").innerHTML = slideshow_template(photo5);
 
 // photo gallery #4
 var gallery6_idx = 0;
@@ -125,7 +129,7 @@ document.getElementById("scroll-right-gallery6").addEventListener("click", funct
   gallery6_idx = gallery6_idx+1;
   $(".photo_g6").removeClass("active");
   $("#photo_g6"+gallery6_idx).addClass("active");
-  if (gallery6_idx == 3) {
+  if (gallery6_idx == 4) {
     $("#scroll-right-gallery6").addClass("last");
   } else {
     $("#scroll-right-gallery6").removeClass("last");
@@ -140,7 +144,7 @@ document.getElementById("scroll-left-gallery6").addEventListener("click", functi
   gallery6_idx = gallery6_idx-1;
   $(".photo_g6").removeClass("active");
   $("#photo_g6"+gallery6_idx).addClass("active");
-  if (gallery6_idx == 3) {
+  if (gallery6_idx == 4) {
     $("#scroll-right-gallery6").addClass("last");
   } else {
     $("#scroll-right-gallery6").removeClass("last");
@@ -151,7 +155,6 @@ document.getElementById("scroll-left-gallery6").addEventListener("click", functi
     $("#scroll-left-gallery6").removeClass("first");
   };
 });
-
 
 // -----------------------------------------------------------------------------
 // reload page if the reader re-orients their device ---------------------------
