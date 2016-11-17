@@ -317,9 +317,11 @@ footer {
   width: 80%;
   margin: 0 auto;
   color: white;
-  // &.shorelines {
-  //   background-color: rgba(0,0,0,0.5);
-  // }
+  &.shorelines {
+    @media @mobile {
+      bottom: 40px;
+    }
+  }
 }
 
 .specialhead-top {

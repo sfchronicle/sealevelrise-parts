@@ -44,7 +44,6 @@ document.getElementById("scroll-right-lastmap").addEventListener("click", functi
 
 document.getElementById("scroll-left-lastmap").addEventListener("click", function() {
   index = index-1;
-  console.log(lookup_mobile[index]);
   document.querySelector(".mobile-template").innerHTML = mobile_template(lookup_mobile[index]);
   if (index == 0) {
     $("#scroll-left-lastmap").addClass("first");
@@ -93,27 +92,27 @@ sidebar.addEventListener("click",function() {
 // initialize photo gallery #6
 var photo1 = {
   url: "http://ww2.hdnux.com/photos/54/11/64/11813276/3/2000x1000.jpg",
-  caption: "This is a caption. ",
+  caption: "A jet takes off over the original levees that surround Oakland International Airport, which opened in 1962. With as little as 18 inches of sea level rise, water could spill across Doolittle Drive onto the airport runways several times a year during extra-high tides unless the drive’s low spots are raised. ",
   credit: "Michael Macor"
 };
 var photo2 = {
   url: "http://ww2.hdnux.com/photos/54/11/64/11813273/3/2000x1000.jpg",
-  caption: "This is a caption. ",
+  caption: "Some ponds are a lot more saturated with salt than others at the Ravenswood Ponds in East Palo Alto. Ravenswood is one of the South Bay Salt Pond Restoration projects. ",
   credit: "Michael Macor"
 };
 var photo3 = {
   url: "http://ww2.hdnux.com/photos/54/11/64/11813274/3/2000x1000.jpg",
-  caption: "This is a caption. ",
+  caption: "Remnants of the old salt works from the 1920s remain at the Eden Landing Ecological Reserve in Hayward. Eden Landing is one of the South Bay Salt Pond Restoration projects. ",
   credit: "Michael Macor"
 };
 var photo4 = {
   url: "http://ww2.hdnux.com/photos/54/11/64/11813277/3/2000x1000.jpg",
-  caption: "This is a caption. ",
+  caption: "An estimated 9,000 properties in Foster City are protected by a levee that runs around the entire development. City officials are considering their options after the Federal Emergency Management Agency’s pending coastal flood map indicates that Foster City’s levee system is no longer adequate. ",
   credit: "Michael Macor"
 };
 var photo5 = {
   url: "http://ww2.hdnux.com/photos/54/11/64/11813236/3/2000x1000.jpg",
-  caption: "This is a caption. ",
+  caption: "Brian Gilardi operates a spreader filled with lime that is distributed along the levees at the Sears Point Wetland Restoration in Sonoma. The lime is used to balance the acidity of the soil, which will encourage plant growth. ",
   credit: "Michael Macor"
 };
 document.querySelector("#photo_g60").innerHTML = slideshow_template(photo1);

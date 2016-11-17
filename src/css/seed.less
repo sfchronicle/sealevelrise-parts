@@ -99,6 +99,7 @@ a {
         max-width: 320px;
         text-align: center;
         margin: auto;
+        padding-bottom: 10px;
       }
       max-width: 510px;
       img {
@@ -165,7 +166,7 @@ a {
   }
 }
 
-.title-img, .inset-photo, .photo_g1, .photo_g2, .photo_g3, .photo_g4, .photo_g5, .wide-format-photo, .small-format-photo, .inset-splash {
+.title-img, .inset-photo, .photo_g1, .photo_g2, .photo_g3, .photo_g4, .photo_g5, .photo_g6, .wide-format-photo, .small-format-photo, .inset-splash {
   font-family: @body;
   .caption {
     font-size: 14px;
@@ -188,7 +189,7 @@ a {
   margin: 0 auto;
 }
 
-.photo_g1, .photo_g2, .photo_g3, .photo_g4, .photo_g5 {
+.photo_g1, .photo_g2, .photo_g3, .photo_g4, .photo_g5, .photo_g6 {
   width: 80% !important;
 }
 
@@ -238,6 +239,10 @@ a {
 
 .next:hover {
   background: #2b4d70;
+}
+
+.photo-gallery6 {
+  padding: 15px 0;
 }
 
 .text, .hed-container, .inset-photo, .inset-splash, .photo-gallery1, .photo-gallery2, .photo-gallery3, .photo-gallery4, .photo-gallery5, .photo-gallery6, .interactive-header, .flex-container,  .small-format-photo {
@@ -309,14 +314,18 @@ a {
 .deck {
   font-size: 23px;
   text-align: center;
-  &.shorelines {
-    font-size: 25px;
-  }
   @media @tablet {
     font-size: 18px;
   }
   @media @mobile {
     padding: 0 10px;
+  }
+  &.shorelines {
+    font-size: 25px;
+    @media @mobile {
+      line-height: 25px;
+      font-size: 20px;
+    }
   }
 }
 
@@ -1021,6 +1030,11 @@ footer {
   @media @mobile {
     top: 60px;
   }
+  &.lower {
+    @media @mobile {
+      top: 100px;
+    }
+  }
 }
 .scroll-right {
   left: 85%;
@@ -1053,6 +1067,9 @@ footer {
       display: none;
     }
   }
+  .toppadding {
+    padding-top: 5px;
+  }
 }
 
 .flex-container {
@@ -1078,6 +1095,8 @@ footer {
 
 .info {
   .flex(0 0 50%);
+  -webkit-flex: 0 0 50%;
+  -ms-flex: 0 0 50%;
   // margin-top: 20px;
   font-size: 17px;
   padding-left: 20px;
@@ -1696,7 +1715,7 @@ path.domain {
   .sidebar-text {
     text-align: center;
     font-size: 20px;
-    padding: 10px 10px 15px 60px;
+    padding: 10px 10px 15px 50px;
     @media @mobile {
       padding: 10px 10px 15px 40px;
       font-size: 18px;
@@ -1818,6 +1837,7 @@ body {
 
 .flex-map {
   .display-flex();
+  .flex-wrap(wrap);
   height: 1300px;
   @media @tablet-horiz {
     height: 1300px;
@@ -1956,7 +1976,14 @@ body {
   max-width: 900px;
   background-color: white;
   .caption {
-    color: black;
+    color: darken(@dark-gray,10%);
+    @media @mobile {
+      width: 80%;
+      margin: auto;
+    }
+  }
+  .fa-times {
+    background-color: darken(@dark-gray,5%);
   }
   .float-img-container {
     .float-img {
@@ -2130,5 +2157,16 @@ body {
 .tabletshow {
   @media screen and (min-width: 769px) {
     display: none;
+  }
+}
+
+#erin-video {
+  padding: 30px 0;
+  @media @mobile {
+    padding: 20px 0;
+    .caption {
+      padding: 0 10px !important;
+      margin-top: 5px;
+    }
   }
 }
